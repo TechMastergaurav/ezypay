@@ -1,6 +1,6 @@
 const mongoose=require("mongoose");
 
-mongoose.connect("mongodb+srv://mtechgaurav03:iB4QB0XeDhM9FlaM@cluster0.0xtlgy3.mongodb.net/paytmapp")
+mongoose.connect("mongodb+srv://mtechgaurav03:iB4QB0XeDhM9FlaM@cluster0.0xtlgy3.mongodb.net/paypal")
 
 const userSchema=new mongoose.Schema({
     firstName:String,
