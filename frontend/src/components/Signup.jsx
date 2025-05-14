@@ -68,7 +68,7 @@ export default function Signup() {
             username,
             password
           };
-          const response = await axios.post("http://localhost:3000/api/v1/user/signup", postData);
+          const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/signup`, postData);
           window.localStorage.setItem("Authorization", "Bearer " + response.data.token);
           navigate("/dashboard");
         }}

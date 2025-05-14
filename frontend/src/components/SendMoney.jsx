@@ -39,7 +39,7 @@ export default function SendMoney(props) {
             <button
                 className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-150 ease-in-out"
                 onClick={async () => {
-                    await axios.post("http://localhost:3000/api/v1/account/transfer", body, { headers });
+                    await axios.post(`${import.meta.env.VITE_API_URL}/account/transfer`, body, { headers });
                     navigate('/confirmation');
                 }}
             >

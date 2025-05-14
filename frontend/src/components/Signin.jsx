@@ -39,7 +39,7 @@ export default function Signin() {
                 onClick={async () => {
                     const postData = { username, password };
                     try {
-                        const response = await axios.post("http://localhost:3000/api/v1/user/signin", postData);
+                        const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/signin`, postData);
                         window.localStorage.setItem("Authorization", "Bearer " + response.data.token);
                         navigate("/dashboard");
                     } catch (error) {

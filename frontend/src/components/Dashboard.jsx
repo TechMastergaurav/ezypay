@@ -22,9 +22,9 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/v1/account/balance', { headers });
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/account/balance`, { headers });
                 setBalance(response.data.balance);
-                const res = await axios.get('http://localhost:3000/api/v1/user/currentUser', { headers });
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/user/currentUser`, { headers });
                 setCurrentUser(res.data.firstName);
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -55,7 +55,7 @@ export default function Dashboard() {
                         <input
                             onChange={async (e) => {
                                 setSearchInput(e.target.value);
-                                const response = await axios.get("http://localhost:3000/api/v1/user/bulk", { params, headers });
+                                const response = await axios.get(`${import.meta.env.VITE_API_URL}/user/bulk`, { params, headers });
                                 setUsers(response.data.user);
                             }}
                             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

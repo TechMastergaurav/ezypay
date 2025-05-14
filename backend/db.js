@@ -1,6 +1,8 @@
 const mongoose=require("mongoose");
 
-mongoose.connect("mongodb+srv://mtechgaurav03:iB4QB0XeDhM9FlaM@cluster0.0xtlgy3.mongodb.net/paypal")
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://mtechgaurav03:iB4QB0XeDhM9FlaM@cluster0.0xtlgy3.mongodb.net/paypal";
+
+mongoose.connect(DATABASE_URL)
 
 const userSchema=new mongoose.Schema({
     firstName:String,
